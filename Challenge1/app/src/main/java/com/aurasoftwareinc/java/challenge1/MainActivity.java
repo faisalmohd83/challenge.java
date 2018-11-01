@@ -2,6 +2,7 @@ package com.aurasoftwareinc.java.challenge1;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,8 @@ import android.widget.TextView;
 
 import org.json.JSONObject;
 
-public class MainActivity extends Activity
-{
+public class MainActivity extends Activity {
+    private String TAG = "MainActivity";
 
     private TextView text1;
     private TextView text2;
@@ -25,7 +26,7 @@ public class MainActivity extends Activity
 
         createLayout();
 
-        setTitle("Put Your Name Here...");
+        setTitle("JSON Marshal App");
     }
 
     private void createLayout()
@@ -129,10 +130,8 @@ public class MainActivity extends Activity
             //
             // Both text views should now contain identical content.
             //
-        }
-        catch (Exception ex)
-        {
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            Log.e(TAG, "testIt: ", ex);
         }
     }
 }
